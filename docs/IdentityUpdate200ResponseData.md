@@ -1,0 +1,82 @@
+# IdentityUpdate200ResponseData
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int32** |  | [optional] 
+**RegistryId** | Pointer to **int32** |  | [optional] 
+
+## Methods
+
+### NewIdentityUpdate200ResponseData
+
+`func NewIdentityUpdate200ResponseData() *IdentityUpdate200ResponseData`
+
+NewIdentityUpdate200ResponseData instantiates a new IdentityUpdate200ResponseData object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewIdentityUpdate200ResponseDataWithDefaults
+
+`func NewIdentityUpdate200ResponseDataWithDefaults() *IdentityUpdate200ResponseData`
+
+NewIdentityUpdate200ResponseDataWithDefaults instantiates a new IdentityUpdate200ResponseData object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *IdentityUpdate200ResponseData) GetId() int32`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *IdentityUpdate200ResponseData) GetIdOk() (*int32, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *IdentityUpdate200ResponseData) SetId(v int32)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *IdentityUpdate200ResponseData) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetRegistryId
+
+`func (o *IdentityUpdate200ResponseData) GetRegistryId() int32`
+
+GetRegistryId returns the RegistryId field if non-nil, zero value otherwise.
+
+### GetRegistryIdOk
+
+`func (o *IdentityUpdate200ResponseData) GetRegistryIdOk() (*int32, bool)`
+
+GetRegistryIdOk returns a tuple with the RegistryId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegistryId
+
+`func (o *IdentityUpdate200ResponseData) SetRegistryId(v int32)`
+
+SetRegistryId sets RegistryId field to given value.
+
+### HasRegistryId
+
+`func (o *IdentityUpdate200ResponseData) HasRegistryId() bool`
+
+HasRegistryId returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
