@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## QueryQuery
 
-> QueryQuery200Response QueryQuery(ctx).XClientId(xClientId).QueryQueryRequest(queryQueryRequest).Execute()
+> QueryQuery200Response QueryQuery(ctx).XClientId(xClientId).XSignature(xSignature).QueryQueryRequest(queryQueryRequest).Execute()
 
 Query@query
 
@@ -30,11 +30,12 @@ import (
 
 func main() {
 	xClientId := "8f14e45f-ceea-467e-adc1-0000example" // string | Custodian client ID used to authenticate the requesting custodian
+	xSignature := "xSignature_example" // string | HMAC signature of the raw request body, signed with the custodian's unique identifier
 	queryQueryRequest := *openapiclient.NewQueryQueryRequest() // QueryQueryRequest | Query definition
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.QueryAPI.QueryQuery(context.Background()).XClientId(xClientId).QueryQueryRequest(queryQueryRequest).Execute()
+	resp, r, err := apiClient.QueryAPI.QueryQuery(context.Background()).XClientId(xClientId).XSignature(xSignature).QueryQueryRequest(queryQueryRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QueryAPI.QueryQuery``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -56,6 +57,7 @@ Other parameters are passed through a pointer to a apiQueryQueryRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xClientId** | **string** | Custodian client ID used to authenticate the requesting custodian | 
+ **xSignature** | **string** | HMAC signature of the raw request body, signed with the custodian&#39;s unique identifier | 
  **queryQueryRequest** | [**QueryQueryRequest**](QueryQueryRequest.md) | Query definition | 
 
 ### Return type

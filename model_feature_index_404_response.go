@@ -14,33 +14,33 @@ import (
 	"encoding/json"
 )
 
-// checks if the QueryQuery401Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &QueryQuery401Response{}
+// checks if the FeatureIndex404Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FeatureIndex404Response{}
 
-// QueryQuery401Response struct for QueryQuery401Response
-type QueryQuery401Response struct {
+// FeatureIndex404Response struct for FeatureIndex404Response
+type FeatureIndex404Response struct {
 	Message *string `json:"message,omitempty"`
 }
 
-// NewQueryQuery401Response instantiates a new QueryQuery401Response object
+// NewFeatureIndex404Response instantiates a new FeatureIndex404Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewQueryQuery401Response() *QueryQuery401Response {
-	this := QueryQuery401Response{}
+func NewFeatureIndex404Response() *FeatureIndex404Response {
+	this := FeatureIndex404Response{}
 	return &this
 }
 
-// NewQueryQuery401ResponseWithDefaults instantiates a new QueryQuery401Response object
+// NewFeatureIndex404ResponseWithDefaults instantiates a new FeatureIndex404Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewQueryQuery401ResponseWithDefaults() *QueryQuery401Response {
-	this := QueryQuery401Response{}
+func NewFeatureIndex404ResponseWithDefaults() *FeatureIndex404Response {
+	this := FeatureIndex404Response{}
 	return &this
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
-func (o *QueryQuery401Response) GetMessage() string {
+func (o *FeatureIndex404Response) GetMessage() string {
 	if o == nil || IsNil(o.Message) {
 		var ret string
 		return ret
@@ -50,7 +50,7 @@ func (o *QueryQuery401Response) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueryQuery401Response) GetMessageOk() (*string, bool) {
+func (o *FeatureIndex404Response) GetMessageOk() (*string, bool) {
 	if o == nil || IsNil(o.Message) {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *QueryQuery401Response) GetMessageOk() (*string, bool) {
 }
 
 // HasMessage returns a boolean if a field has been set.
-func (o *QueryQuery401Response) HasMessage() bool {
+func (o *FeatureIndex404Response) HasMessage() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -67,11 +67,11 @@ func (o *QueryQuery401Response) HasMessage() bool {
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *QueryQuery401Response) SetMessage(v string) {
+func (o *FeatureIndex404Response) SetMessage(v string) {
 	o.Message = &v
 }
 
-func (o QueryQuery401Response) MarshalJSON() ([]byte, error) {
+func (o FeatureIndex404Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -79,7 +79,7 @@ func (o QueryQuery401Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o QueryQuery401Response) ToMap() (map[string]interface{}, error) {
+func (o FeatureIndex404Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
@@ -87,38 +87,38 @@ func (o QueryQuery401Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableQueryQuery401Response struct {
-	value *QueryQuery401Response
+type NullableFeatureIndex404Response struct {
+	value *FeatureIndex404Response
 	isSet bool
 }
 
-func (v NullableQueryQuery401Response) Get() *QueryQuery401Response {
+func (v NullableFeatureIndex404Response) Get() *FeatureIndex404Response {
 	return v.value
 }
 
-func (v *NullableQueryQuery401Response) Set(val *QueryQuery401Response) {
+func (v *NullableFeatureIndex404Response) Set(val *FeatureIndex404Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableQueryQuery401Response) IsSet() bool {
+func (v NullableFeatureIndex404Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableQueryQuery401Response) Unset() {
+func (v *NullableFeatureIndex404Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableQueryQuery401Response(val *QueryQuery401Response) *NullableQueryQuery401Response {
-	return &NullableQueryQuery401Response{value: val, isSet: true}
+func NewNullableFeatureIndex404Response(val *FeatureIndex404Response) *NullableFeatureIndex404Response {
+	return &NullableFeatureIndex404Response{value: val, isSet: true}
 }
 
-func (v NullableQueryQuery401Response) MarshalJSON() ([]byte, error) {
+func (v NullableFeatureIndex404Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableQueryQuery401Response) UnmarshalJSON(src []byte) error {
+func (v *NullableFeatureIndex404Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
