@@ -28,7 +28,6 @@ type User struct {
 	EmailVerifiedAt *string `json:"email_verified_at,omitempty"`
 	ConsentScrape *bool `json:"consent_scrape,omitempty"`
 	PublicOptIn *bool `json:"public_opt_in,omitempty"`
-	DeclarationSigned *bool `json:"declaration_signed,omitempty"`
 	OrganisationId *int32 `json:"organisation_id,omitempty"`
 	OrcidScanning *int32 `json:"orcid_scanning,omitempty"`
 	OrcidScanningCompletedAt *string `json:"orcid_scanning_completed_at,omitempty"`
@@ -342,38 +341,6 @@ func (o *User) SetPublicOptIn(v bool) {
 	o.PublicOptIn = &v
 }
 
-// GetDeclarationSigned returns the DeclarationSigned field value if set, zero value otherwise.
-func (o *User) GetDeclarationSigned() bool {
-	if o == nil || IsNil(o.DeclarationSigned) {
-		var ret bool
-		return ret
-	}
-	return *o.DeclarationSigned
-}
-
-// GetDeclarationSignedOk returns a tuple with the DeclarationSigned field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *User) GetDeclarationSignedOk() (*bool, bool) {
-	if o == nil || IsNil(o.DeclarationSigned) {
-		return nil, false
-	}
-	return o.DeclarationSigned, true
-}
-
-// HasDeclarationSigned returns a boolean if a field has been set.
-func (o *User) HasDeclarationSigned() bool {
-	if o != nil && !IsNil(o.DeclarationSigned) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeclarationSigned gets a reference to the given bool and assigns it to the DeclarationSigned field.
-func (o *User) SetDeclarationSigned(v bool) {
-	o.DeclarationSigned = &v
-}
-
 // GetOrganisationId returns the OrganisationId field value if set, zero value otherwise.
 func (o *User) GetOrganisationId() int32 {
 	if o == nil || IsNil(o.OrganisationId) {
@@ -602,9 +569,6 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PublicOptIn) {
 		toSerialize["public_opt_in"] = o.PublicOptIn
-	}
-	if !IsNil(o.DeclarationSigned) {
-		toSerialize["declaration_signed"] = o.DeclarationSigned
 	}
 	if !IsNil(o.OrganisationId) {
 		toSerialize["organisation_id"] = o.OrganisationId

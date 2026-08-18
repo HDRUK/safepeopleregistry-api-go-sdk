@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **FirstName** | Pointer to **string** |  | [optional] 
 **LastName** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Email** | Pointer to **string** |  | [optional] 
 **RegistryId** | Pointer to **int32** |  | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
@@ -18,7 +17,6 @@ Name | Type | Description | Notes
 **Unclaimed** | Pointer to **int32** |  | [optional] 
 **FeedSource** | Pointer to **NullableString** |  | [optional] 
 **PublicOptIn** | Pointer to **int32** |  | [optional] 
-**DeclarationSigned** | Pointer to **bool** |  | [optional] 
 **OrganisationId** | Pointer to **int32** |  | [optional] 
 **OrcidScanning** | Pointer to **bool** |  | [optional] 
 **OrcidScanningCompletedAt** | Pointer to **NullableString** |  | [optional] 
@@ -30,7 +28,6 @@ Name | Type | Description | Notes
 **Location** | Pointer to **NullableString** |  | [optional] 
 **TAndCAgreed** | Pointer to **bool** |  | [optional] 
 **TAndCAgreementDate** | Pointer to **NullableString** |  | [optional] 
-**UksaRegistered** | Pointer to **bool** |  | [optional] 
 **IsSro** | Pointer to **bool** |  | [optional] 
 **InvitedBy** | Pointer to **NullableInt32** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -155,31 +152,6 @@ SetName sets Name field to given value.
 `func (o *QueryQuery200ResponseDataUser) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetEmail
-
-`func (o *QueryQuery200ResponseDataUser) GetEmail() string`
-
-GetEmail returns the Email field if non-nil, zero value otherwise.
-
-### GetEmailOk
-
-`func (o *QueryQuery200ResponseDataUser) GetEmailOk() (*string, bool)`
-
-GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEmail
-
-`func (o *QueryQuery200ResponseDataUser) SetEmail(v string)`
-
-SetEmail sets Email field to given value.
-
-### HasEmail
-
-`func (o *QueryQuery200ResponseDataUser) HasEmail() bool`
-
-HasEmail returns a boolean if a field has been set.
 
 ### GetRegistryId
 
@@ -425,31 +397,6 @@ SetPublicOptIn sets PublicOptIn field to given value.
 `func (o *QueryQuery200ResponseDataUser) HasPublicOptIn() bool`
 
 HasPublicOptIn returns a boolean if a field has been set.
-
-### GetDeclarationSigned
-
-`func (o *QueryQuery200ResponseDataUser) GetDeclarationSigned() bool`
-
-GetDeclarationSigned returns the DeclarationSigned field if non-nil, zero value otherwise.
-
-### GetDeclarationSignedOk
-
-`func (o *QueryQuery200ResponseDataUser) GetDeclarationSignedOk() (*bool, bool)`
-
-GetDeclarationSignedOk returns a tuple with the DeclarationSigned field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeclarationSigned
-
-`func (o *QueryQuery200ResponseDataUser) SetDeclarationSigned(v bool)`
-
-SetDeclarationSigned sets DeclarationSigned field to given value.
-
-### HasDeclarationSigned
-
-`func (o *QueryQuery200ResponseDataUser) HasDeclarationSigned() bool`
-
-HasDeclarationSigned returns a boolean if a field has been set.
 
 ### GetOrganisationId
 
@@ -786,31 +733,6 @@ HasTAndCAgreementDate returns a boolean if a field has been set.
 `func (o *QueryQuery200ResponseDataUser) UnsetTAndCAgreementDate()`
 
 UnsetTAndCAgreementDate ensures that no value is present for TAndCAgreementDate, not even an explicit nil
-### GetUksaRegistered
-
-`func (o *QueryQuery200ResponseDataUser) GetUksaRegistered() bool`
-
-GetUksaRegistered returns the UksaRegistered field if non-nil, zero value otherwise.
-
-### GetUksaRegisteredOk
-
-`func (o *QueryQuery200ResponseDataUser) GetUksaRegisteredOk() (*bool, bool)`
-
-GetUksaRegisteredOk returns a tuple with the UksaRegistered field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUksaRegistered
-
-`func (o *QueryQuery200ResponseDataUser) SetUksaRegistered(v bool)`
-
-SetUksaRegistered sets UksaRegistered field to given value.
-
-### HasUksaRegistered
-
-`func (o *QueryQuery200ResponseDataUser) HasUksaRegistered() bool`
-
-HasUksaRegistered returns a boolean if a field has been set.
-
 ### GetIsSro
 
 `func (o *QueryQuery200ResponseDataUser) GetIsSro() bool`

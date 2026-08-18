@@ -23,7 +23,6 @@ type QueryQuery200ResponseDataUser struct {
 	FirstName *string `json:"first_name,omitempty"`
 	LastName *string `json:"last_name,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Email *string `json:"email,omitempty"`
 	RegistryId *int32 `json:"registry_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
@@ -33,7 +32,6 @@ type QueryQuery200ResponseDataUser struct {
 	Unclaimed *int32 `json:"unclaimed,omitempty"`
 	FeedSource NullableString `json:"feed_source,omitempty"`
 	PublicOptIn *int32 `json:"public_opt_in,omitempty"`
-	DeclarationSigned *bool `json:"declaration_signed,omitempty"`
 	OrganisationId *int32 `json:"organisation_id,omitempty"`
 	OrcidScanning *bool `json:"orcid_scanning,omitempty"`
 	OrcidScanningCompletedAt NullableString `json:"orcid_scanning_completed_at,omitempty"`
@@ -45,7 +43,6 @@ type QueryQuery200ResponseDataUser struct {
 	Location NullableString `json:"location,omitempty"`
 	TAndCAgreed *bool `json:"t_and_c_agreed,omitempty"`
 	TAndCAgreementDate NullableString `json:"t_and_c_agreement_date,omitempty"`
-	UksaRegistered *bool `json:"uksa_registered,omitempty"`
 	IsSro *bool `json:"is_sro,omitempty"`
 	InvitedBy NullableInt32 `json:"invited_by,omitempty"`
 	Status *string `json:"status,omitempty"`
@@ -196,38 +193,6 @@ func (o *QueryQuery200ResponseDataUser) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *QueryQuery200ResponseDataUser) SetName(v string) {
 	o.Name = &v
-}
-
-// GetEmail returns the Email field value if set, zero value otherwise.
-func (o *QueryQuery200ResponseDataUser) GetEmail() string {
-	if o == nil || IsNil(o.Email) {
-		var ret string
-		return ret
-	}
-	return *o.Email
-}
-
-// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QueryQuery200ResponseDataUser) GetEmailOk() (*string, bool) {
-	if o == nil || IsNil(o.Email) {
-		return nil, false
-	}
-	return o.Email, true
-}
-
-// HasEmail returns a boolean if a field has been set.
-func (o *QueryQuery200ResponseDataUser) HasEmail() bool {
-	if o != nil && !IsNil(o.Email) {
-		return true
-	}
-
-	return false
-}
-
-// SetEmail gets a reference to the given string and assigns it to the Email field.
-func (o *QueryQuery200ResponseDataUser) SetEmail(v string) {
-	o.Email = &v
 }
 
 // GetRegistryId returns the RegistryId field value if set, zero value otherwise.
@@ -536,38 +501,6 @@ func (o *QueryQuery200ResponseDataUser) HasPublicOptIn() bool {
 // SetPublicOptIn gets a reference to the given int32 and assigns it to the PublicOptIn field.
 func (o *QueryQuery200ResponseDataUser) SetPublicOptIn(v int32) {
 	o.PublicOptIn = &v
-}
-
-// GetDeclarationSigned returns the DeclarationSigned field value if set, zero value otherwise.
-func (o *QueryQuery200ResponseDataUser) GetDeclarationSigned() bool {
-	if o == nil || IsNil(o.DeclarationSigned) {
-		var ret bool
-		return ret
-	}
-	return *o.DeclarationSigned
-}
-
-// GetDeclarationSignedOk returns a tuple with the DeclarationSigned field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QueryQuery200ResponseDataUser) GetDeclarationSignedOk() (*bool, bool) {
-	if o == nil || IsNil(o.DeclarationSigned) {
-		return nil, false
-	}
-	return o.DeclarationSigned, true
-}
-
-// HasDeclarationSigned returns a boolean if a field has been set.
-func (o *QueryQuery200ResponseDataUser) HasDeclarationSigned() bool {
-	if o != nil && !IsNil(o.DeclarationSigned) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeclarationSigned gets a reference to the given bool and assigns it to the DeclarationSigned field.
-func (o *QueryQuery200ResponseDataUser) SetDeclarationSigned(v bool) {
-	o.DeclarationSigned = &v
 }
 
 // GetOrganisationId returns the OrganisationId field value if set, zero value otherwise.
@@ -982,38 +915,6 @@ func (o *QueryQuery200ResponseDataUser) UnsetTAndCAgreementDate() {
 	o.TAndCAgreementDate.Unset()
 }
 
-// GetUksaRegistered returns the UksaRegistered field value if set, zero value otherwise.
-func (o *QueryQuery200ResponseDataUser) GetUksaRegistered() bool {
-	if o == nil || IsNil(o.UksaRegistered) {
-		var ret bool
-		return ret
-	}
-	return *o.UksaRegistered
-}
-
-// GetUksaRegisteredOk returns a tuple with the UksaRegistered field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QueryQuery200ResponseDataUser) GetUksaRegisteredOk() (*bool, bool) {
-	if o == nil || IsNil(o.UksaRegistered) {
-		return nil, false
-	}
-	return o.UksaRegistered, true
-}
-
-// HasUksaRegistered returns a boolean if a field has been set.
-func (o *QueryQuery200ResponseDataUser) HasUksaRegistered() bool {
-	if o != nil && !IsNil(o.UksaRegistered) {
-		return true
-	}
-
-	return false
-}
-
-// SetUksaRegistered gets a reference to the given bool and assigns it to the UksaRegistered field.
-func (o *QueryQuery200ResponseDataUser) SetUksaRegistered(v bool) {
-	o.UksaRegistered = &v
-}
-
 // GetIsSro returns the IsSro field value if set, zero value otherwise.
 func (o *QueryQuery200ResponseDataUser) GetIsSro() bool {
 	if o == nil || IsNil(o.IsSro) {
@@ -1226,9 +1127,6 @@ func (o QueryQuery200ResponseDataUser) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Email) {
-		toSerialize["email"] = o.Email
-	}
 	if !IsNil(o.RegistryId) {
 		toSerialize["registry_id"] = o.RegistryId
 	}
@@ -1255,9 +1153,6 @@ func (o QueryQuery200ResponseDataUser) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PublicOptIn) {
 		toSerialize["public_opt_in"] = o.PublicOptIn
-	}
-	if !IsNil(o.DeclarationSigned) {
-		toSerialize["declaration_signed"] = o.DeclarationSigned
 	}
 	if !IsNil(o.OrganisationId) {
 		toSerialize["organisation_id"] = o.OrganisationId
@@ -1291,9 +1186,6 @@ func (o QueryQuery200ResponseDataUser) ToMap() (map[string]interface{}, error) {
 	}
 	if o.TAndCAgreementDate.IsSet() {
 		toSerialize["t_and_c_agreement_date"] = o.TAndCAgreementDate.Get()
-	}
-	if !IsNil(o.UksaRegistered) {
-		toSerialize["uksa_registered"] = o.UksaRegistered
 	}
 	if !IsNil(o.IsSro) {
 		toSerialize["is_sro"] = o.IsSro

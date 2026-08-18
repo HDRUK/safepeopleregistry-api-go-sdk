@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **EmailVerifiedAt** | Pointer to **string** |  | [optional] 
 **ConsentScrape** | Pointer to **bool** |  | [optional] 
 **PublicOptIn** | Pointer to **bool** |  | [optional] 
-**DeclarationSigned** | Pointer to **bool** |  | [optional] 
 **OrganisationId** | Pointer to **int32** |  | [optional] 
 **OrcidScanning** | Pointer to **int32** |  | [optional] 
 **OrcidScanningCompletedAt** | Pointer to **string** |  | [optional] 
@@ -264,31 +263,6 @@ SetPublicOptIn sets PublicOptIn field to given value.
 `func (o *User) HasPublicOptIn() bool`
 
 HasPublicOptIn returns a boolean if a field has been set.
-
-### GetDeclarationSigned
-
-`func (o *User) GetDeclarationSigned() bool`
-
-GetDeclarationSigned returns the DeclarationSigned field if non-nil, zero value otherwise.
-
-### GetDeclarationSignedOk
-
-`func (o *User) GetDeclarationSignedOk() (*bool, bool)`
-
-GetDeclarationSignedOk returns a tuple with the DeclarationSigned field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeclarationSigned
-
-`func (o *User) SetDeclarationSigned(v bool)`
-
-SetDeclarationSigned sets DeclarationSigned field to given value.
-
-### HasDeclarationSigned
-
-`func (o *User) HasDeclarationSigned() bool`
-
-HasDeclarationSigned returns a boolean if a field has been set.
 
 ### GetOrganisationId
 
