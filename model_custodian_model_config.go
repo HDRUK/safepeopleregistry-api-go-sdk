@@ -23,7 +23,7 @@ type CustodianModelConfig struct {
 	Id *int32 `json:"id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
-	EntityModelId *int32 `json:"entity_model_id,omitempty"`
+	DecisionModelId *int32 `json:"decision_model_id,omitempty"`
 	Active *bool `json:"active,omitempty"`
 	CustodianId *int32 `json:"custodian_id,omitempty"`
 }
@@ -141,36 +141,36 @@ func (o *CustodianModelConfig) SetUpdatedAt(v string) {
 	o.UpdatedAt = &v
 }
 
-// GetEntityModelId returns the EntityModelId field value if set, zero value otherwise.
-func (o *CustodianModelConfig) GetEntityModelId() int32 {
-	if o == nil || IsNil(o.EntityModelId) {
+// GetDecisionModelId returns the DecisionModelId field value if set, zero value otherwise.
+func (o *CustodianModelConfig) GetDecisionModelId() int32 {
+	if o == nil || IsNil(o.DecisionModelId) {
 		var ret int32
 		return ret
 	}
-	return *o.EntityModelId
+	return *o.DecisionModelId
 }
 
-// GetEntityModelIdOk returns a tuple with the EntityModelId field value if set, nil otherwise
+// GetDecisionModelIdOk returns a tuple with the DecisionModelId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustodianModelConfig) GetEntityModelIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.EntityModelId) {
+func (o *CustodianModelConfig) GetDecisionModelIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.DecisionModelId) {
 		return nil, false
 	}
-	return o.EntityModelId, true
+	return o.DecisionModelId, true
 }
 
-// HasEntityModelId returns a boolean if a field has been set.
-func (o *CustodianModelConfig) HasEntityModelId() bool {
-	if o != nil && !IsNil(o.EntityModelId) {
+// HasDecisionModelId returns a boolean if a field has been set.
+func (o *CustodianModelConfig) HasDecisionModelId() bool {
+	if o != nil && !IsNil(o.DecisionModelId) {
 		return true
 	}
 
 	return false
 }
 
-// SetEntityModelId gets a reference to the given int32 and assigns it to the EntityModelId field.
-func (o *CustodianModelConfig) SetEntityModelId(v int32) {
-	o.EntityModelId = &v
+// SetDecisionModelId gets a reference to the given int32 and assigns it to the DecisionModelId field.
+func (o *CustodianModelConfig) SetDecisionModelId(v int32) {
+	o.DecisionModelId = &v
 }
 
 // GetActive returns the Active field value if set, zero value otherwise.
@@ -256,8 +256,8 @@ func (o CustodianModelConfig) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt
 	}
-	if !IsNil(o.EntityModelId) {
-		toSerialize["entity_model_id"] = o.EntityModelId
+	if !IsNil(o.DecisionModelId) {
+		toSerialize["decision_model_id"] = o.DecisionModelId
 	}
 	if !IsNil(o.Active) {
 		toSerialize["active"] = o.Active

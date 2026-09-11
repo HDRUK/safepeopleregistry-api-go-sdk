@@ -50,6 +50,10 @@ type Identity struct {
 	IdvtDocumentCountry *string `json:"idvt_document_country,omitempty"`
 	// Validity date of the document used for IDVT
 	IdvtDocumentValidUntil *string `json:"idvt_document_valid_until,omitempty"`
+	// First name on the document used for IDVT
+	IdvtDocumentFirstName *string `json:"idvt_document_first_name,omitempty"`
+	// Last name on the document used for IDVT
+	IdvtDocumentValidLastName *string `json:"idvt_document_valid_last_name,omitempty"`
 	// ID of the IDVT attempt
 	IdvtAttemptId *string `json:"idvt_attempt_id,omitempty"`
 	// Context ID for IDVT
@@ -569,6 +573,70 @@ func (o *Identity) SetIdvtDocumentValidUntil(v string) {
 	o.IdvtDocumentValidUntil = &v
 }
 
+// GetIdvtDocumentFirstName returns the IdvtDocumentFirstName field value if set, zero value otherwise.
+func (o *Identity) GetIdvtDocumentFirstName() string {
+	if o == nil || IsNil(o.IdvtDocumentFirstName) {
+		var ret string
+		return ret
+	}
+	return *o.IdvtDocumentFirstName
+}
+
+// GetIdvtDocumentFirstNameOk returns a tuple with the IdvtDocumentFirstName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Identity) GetIdvtDocumentFirstNameOk() (*string, bool) {
+	if o == nil || IsNil(o.IdvtDocumentFirstName) {
+		return nil, false
+	}
+	return o.IdvtDocumentFirstName, true
+}
+
+// HasIdvtDocumentFirstName returns a boolean if a field has been set.
+func (o *Identity) HasIdvtDocumentFirstName() bool {
+	if o != nil && !IsNil(o.IdvtDocumentFirstName) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdvtDocumentFirstName gets a reference to the given string and assigns it to the IdvtDocumentFirstName field.
+func (o *Identity) SetIdvtDocumentFirstName(v string) {
+	o.IdvtDocumentFirstName = &v
+}
+
+// GetIdvtDocumentValidLastName returns the IdvtDocumentValidLastName field value if set, zero value otherwise.
+func (o *Identity) GetIdvtDocumentValidLastName() string {
+	if o == nil || IsNil(o.IdvtDocumentValidLastName) {
+		var ret string
+		return ret
+	}
+	return *o.IdvtDocumentValidLastName
+}
+
+// GetIdvtDocumentValidLastNameOk returns a tuple with the IdvtDocumentValidLastName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Identity) GetIdvtDocumentValidLastNameOk() (*string, bool) {
+	if o == nil || IsNil(o.IdvtDocumentValidLastName) {
+		return nil, false
+	}
+	return o.IdvtDocumentValidLastName, true
+}
+
+// HasIdvtDocumentValidLastName returns a boolean if a field has been set.
+func (o *Identity) HasIdvtDocumentValidLastName() bool {
+	if o != nil && !IsNil(o.IdvtDocumentValidLastName) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdvtDocumentValidLastName gets a reference to the given string and assigns it to the IdvtDocumentValidLastName field.
+func (o *Identity) SetIdvtDocumentValidLastName(v string) {
+	o.IdvtDocumentValidLastName = &v
+}
+
 // GetIdvtAttemptId returns the IdvtAttemptId field value if set, zero value otherwise.
 func (o *Identity) GetIdvtAttemptId() string {
 	if o == nil || IsNil(o.IdvtAttemptId) {
@@ -943,6 +1011,12 @@ func (o Identity) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IdvtDocumentValidUntil) {
 		toSerialize["idvt_document_valid_until"] = o.IdvtDocumentValidUntil
+	}
+	if !IsNil(o.IdvtDocumentFirstName) {
+		toSerialize["idvt_document_first_name"] = o.IdvtDocumentFirstName
+	}
+	if !IsNil(o.IdvtDocumentValidLastName) {
+		toSerialize["idvt_document_valid_last_name"] = o.IdvtDocumentValidLastName
 	}
 	if !IsNil(o.IdvtAttemptId) {
 		toSerialize["idvt_attempt_id"] = o.IdvtAttemptId

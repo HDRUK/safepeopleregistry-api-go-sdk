@@ -32,8 +32,8 @@ type DecisionModel struct {
 	RuleClass string `json:"rule_class"`
 	// Description of the decision model
 	Description *string `json:"description,omitempty"`
-	// ID of the entity model type associated with the decision
-	EntityModelTypeId *int32 `json:"entity_model_type_id,omitempty"`
+	// ID of the decision model type associated with the decision
+	DecisionModelTypeId *int32 `json:"decision_model_type_id,omitempty"`
 	// Timestamp when the decision model was created
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// Timestamp when the decision model was last updated
@@ -198,36 +198,36 @@ func (o *DecisionModel) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetEntityModelTypeId returns the EntityModelTypeId field value if set, zero value otherwise.
-func (o *DecisionModel) GetEntityModelTypeId() int32 {
-	if o == nil || IsNil(o.EntityModelTypeId) {
+// GetDecisionModelTypeId returns the DecisionModelTypeId field value if set, zero value otherwise.
+func (o *DecisionModel) GetDecisionModelTypeId() int32 {
+	if o == nil || IsNil(o.DecisionModelTypeId) {
 		var ret int32
 		return ret
 	}
-	return *o.EntityModelTypeId
+	return *o.DecisionModelTypeId
 }
 
-// GetEntityModelTypeIdOk returns a tuple with the EntityModelTypeId field value if set, nil otherwise
+// GetDecisionModelTypeIdOk returns a tuple with the DecisionModelTypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DecisionModel) GetEntityModelTypeIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.EntityModelTypeId) {
+func (o *DecisionModel) GetDecisionModelTypeIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.DecisionModelTypeId) {
 		return nil, false
 	}
-	return o.EntityModelTypeId, true
+	return o.DecisionModelTypeId, true
 }
 
-// HasEntityModelTypeId returns a boolean if a field has been set.
-func (o *DecisionModel) HasEntityModelTypeId() bool {
-	if o != nil && !IsNil(o.EntityModelTypeId) {
+// HasDecisionModelTypeId returns a boolean if a field has been set.
+func (o *DecisionModel) HasDecisionModelTypeId() bool {
+	if o != nil && !IsNil(o.DecisionModelTypeId) {
 		return true
 	}
 
 	return false
 }
 
-// SetEntityModelTypeId gets a reference to the given int32 and assigns it to the EntityModelTypeId field.
-func (o *DecisionModel) SetEntityModelTypeId(v int32) {
-	o.EntityModelTypeId = &v
+// SetDecisionModelTypeId gets a reference to the given int32 and assigns it to the DecisionModelTypeId field.
+func (o *DecisionModel) SetDecisionModelTypeId(v int32) {
+	o.DecisionModelTypeId = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -313,8 +313,8 @@ func (o DecisionModel) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.EntityModelTypeId) {
-		toSerialize["entity_model_type_id"] = o.EntityModelTypeId
+	if !IsNil(o.DecisionModelTypeId) {
+		toSerialize["decision_model_type_id"] = o.DecisionModelTypeId
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["created_at"] = o.CreatedAt

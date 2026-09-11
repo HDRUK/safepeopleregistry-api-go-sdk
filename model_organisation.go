@@ -49,6 +49,10 @@ type Organisation struct {
 	CePlusCertified *bool `json:"ce_plus_certified,omitempty"`
 	CePlusCertificationNum *string `json:"ce_plus_certification_num,omitempty"`
 	CePlusExpiryDate *string `json:"ce_plus_expiry_date,omitempty"`
+	// True if either CE or ISO 27001 certification is currently valid
+	CeOrIsoCertified *bool `json:"ce_or_iso_certified,omitempty"`
+	// True if either CE+ or ISO 27001 certification is currently valid
+	CePlusOrIsoCertified *bool `json:"ce_plus_or_iso_certified,omitempty"`
 	IdvtResult *int32 `json:"idvt_result,omitempty"`
 	IdvtResultPerc *int32 `json:"idvt_result_perc,omitempty"`
 	IdvtErrors *string `json:"idvt_errors,omitempty"`
@@ -1019,6 +1023,70 @@ func (o *Organisation) SetCePlusExpiryDate(v string) {
 	o.CePlusExpiryDate = &v
 }
 
+// GetCeOrIsoCertified returns the CeOrIsoCertified field value if set, zero value otherwise.
+func (o *Organisation) GetCeOrIsoCertified() bool {
+	if o == nil || IsNil(o.CeOrIsoCertified) {
+		var ret bool
+		return ret
+	}
+	return *o.CeOrIsoCertified
+}
+
+// GetCeOrIsoCertifiedOk returns a tuple with the CeOrIsoCertified field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Organisation) GetCeOrIsoCertifiedOk() (*bool, bool) {
+	if o == nil || IsNil(o.CeOrIsoCertified) {
+		return nil, false
+	}
+	return o.CeOrIsoCertified, true
+}
+
+// HasCeOrIsoCertified returns a boolean if a field has been set.
+func (o *Organisation) HasCeOrIsoCertified() bool {
+	if o != nil && !IsNil(o.CeOrIsoCertified) {
+		return true
+	}
+
+	return false
+}
+
+// SetCeOrIsoCertified gets a reference to the given bool and assigns it to the CeOrIsoCertified field.
+func (o *Organisation) SetCeOrIsoCertified(v bool) {
+	o.CeOrIsoCertified = &v
+}
+
+// GetCePlusOrIsoCertified returns the CePlusOrIsoCertified field value if set, zero value otherwise.
+func (o *Organisation) GetCePlusOrIsoCertified() bool {
+	if o == nil || IsNil(o.CePlusOrIsoCertified) {
+		var ret bool
+		return ret
+	}
+	return *o.CePlusOrIsoCertified
+}
+
+// GetCePlusOrIsoCertifiedOk returns a tuple with the CePlusOrIsoCertified field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Organisation) GetCePlusOrIsoCertifiedOk() (*bool, bool) {
+	if o == nil || IsNil(o.CePlusOrIsoCertified) {
+		return nil, false
+	}
+	return o.CePlusOrIsoCertified, true
+}
+
+// HasCePlusOrIsoCertified returns a boolean if a field has been set.
+func (o *Organisation) HasCePlusOrIsoCertified() bool {
+	if o != nil && !IsNil(o.CePlusOrIsoCertified) {
+		return true
+	}
+
+	return false
+}
+
+// SetCePlusOrIsoCertified gets a reference to the given bool and assigns it to the CePlusOrIsoCertified field.
+func (o *Organisation) SetCePlusOrIsoCertified(v bool) {
+	o.CePlusOrIsoCertified = &v
+}
+
 // GetIdvtResult returns the IdvtResult field value if set, zero value otherwise.
 func (o *Organisation) GetIdvtResult() int32 {
 	if o == nil || IsNil(o.IdvtResult) {
@@ -1691,6 +1759,12 @@ func (o Organisation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CePlusExpiryDate) {
 		toSerialize["ce_plus_expiry_date"] = o.CePlusExpiryDate
+	}
+	if !IsNil(o.CeOrIsoCertified) {
+		toSerialize["ce_or_iso_certified"] = o.CeOrIsoCertified
+	}
+	if !IsNil(o.CePlusOrIsoCertified) {
+		toSerialize["ce_plus_or_iso_certified"] = o.CePlusOrIsoCertified
 	}
 	if !IsNil(o.IdvtResult) {
 		toSerialize["idvt_result"] = o.IdvtResult

@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **IdvtDocumentNumber** | Pointer to **string** | Document number used for IDVT | [optional] 
 **IdvtDocumentCountry** | Pointer to **string** | Country of the document used for IDVT | [optional] 
 **IdvtDocumentValidUntil** | Pointer to **string** | Validity date of the document used for IDVT | [optional] 
+**IdvtDocumentFirstName** | Pointer to **string** | First name on the document used for IDVT | [optional] 
+**IdvtDocumentValidLastName** | Pointer to **string** | Last name on the document used for IDVT | [optional] 
 **IdvtAttemptId** | Pointer to **string** | ID of the IDVT attempt | [optional] 
 **IdvtContextId** | Pointer to **string** | Context ID for IDVT | [optional] 
 **IdvtDocumentDob** | Pointer to **string** | Date of birth on the document used for IDVT | [optional] 
@@ -423,6 +425,56 @@ SetIdvtDocumentValidUntil sets IdvtDocumentValidUntil field to given value.
 `func (o *Identity) HasIdvtDocumentValidUntil() bool`
 
 HasIdvtDocumentValidUntil returns a boolean if a field has been set.
+
+### GetIdvtDocumentFirstName
+
+`func (o *Identity) GetIdvtDocumentFirstName() string`
+
+GetIdvtDocumentFirstName returns the IdvtDocumentFirstName field if non-nil, zero value otherwise.
+
+### GetIdvtDocumentFirstNameOk
+
+`func (o *Identity) GetIdvtDocumentFirstNameOk() (*string, bool)`
+
+GetIdvtDocumentFirstNameOk returns a tuple with the IdvtDocumentFirstName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdvtDocumentFirstName
+
+`func (o *Identity) SetIdvtDocumentFirstName(v string)`
+
+SetIdvtDocumentFirstName sets IdvtDocumentFirstName field to given value.
+
+### HasIdvtDocumentFirstName
+
+`func (o *Identity) HasIdvtDocumentFirstName() bool`
+
+HasIdvtDocumentFirstName returns a boolean if a field has been set.
+
+### GetIdvtDocumentValidLastName
+
+`func (o *Identity) GetIdvtDocumentValidLastName() string`
+
+GetIdvtDocumentValidLastName returns the IdvtDocumentValidLastName field if non-nil, zero value otherwise.
+
+### GetIdvtDocumentValidLastNameOk
+
+`func (o *Identity) GetIdvtDocumentValidLastNameOk() (*string, bool)`
+
+GetIdvtDocumentValidLastNameOk returns a tuple with the IdvtDocumentValidLastName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdvtDocumentValidLastName
+
+`func (o *Identity) SetIdvtDocumentValidLastName(v string)`
+
+SetIdvtDocumentValidLastName sets IdvtDocumentValidLastName field to given value.
+
+### HasIdvtDocumentValidLastName
+
+`func (o *Identity) HasIdvtDocumentValidLastName() bool`
+
+HasIdvtDocumentValidLastName returns a boolean if a field has been set.
 
 ### GetIdvtAttemptId
 

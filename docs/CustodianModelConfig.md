@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** | Model primary key | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
-**EntityModelId** | Pointer to **int32** |  | [optional] 
+**DecisionModelId** | Pointer to **int32** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **CustodianId** | Pointer to **int32** |  | [optional] 
 
@@ -105,30 +105,30 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 HasUpdatedAt returns a boolean if a field has been set.
 
-### GetEntityModelId
+### GetDecisionModelId
 
-`func (o *CustodianModelConfig) GetEntityModelId() int32`
+`func (o *CustodianModelConfig) GetDecisionModelId() int32`
 
-GetEntityModelId returns the EntityModelId field if non-nil, zero value otherwise.
+GetDecisionModelId returns the DecisionModelId field if non-nil, zero value otherwise.
 
-### GetEntityModelIdOk
+### GetDecisionModelIdOk
 
-`func (o *CustodianModelConfig) GetEntityModelIdOk() (*int32, bool)`
+`func (o *CustodianModelConfig) GetDecisionModelIdOk() (*int32, bool)`
 
-GetEntityModelIdOk returns a tuple with the EntityModelId field if it's non-nil, zero value otherwise
+GetDecisionModelIdOk returns a tuple with the DecisionModelId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEntityModelId
+### SetDecisionModelId
 
-`func (o *CustodianModelConfig) SetEntityModelId(v int32)`
+`func (o *CustodianModelConfig) SetDecisionModelId(v int32)`
 
-SetEntityModelId sets EntityModelId field to given value.
+SetDecisionModelId sets DecisionModelId field to given value.
 
-### HasEntityModelId
+### HasDecisionModelId
 
-`func (o *CustodianModelConfig) HasEntityModelId() bool`
+`func (o *CustodianModelConfig) HasDecisionModelId() bool`
 
-HasEntityModelId returns a boolean if a field has been set.
+HasDecisionModelId returns a boolean if a field has been set.
 
 ### GetActive
 

@@ -15,40 +15,40 @@ import (
 	"time"
 )
 
-// checks if the EntityModelType type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &EntityModelType{}
+// checks if the DecisionModelType type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DecisionModelType{}
 
-// EntityModelType Model representing types of entity models
-type EntityModelType struct {
-	// Unique identifier for the entity model type
+// DecisionModelType Model representing types of decision models
+type DecisionModelType struct {
+	// Unique identifier for the decision model type
 	Id *int32 `json:"id,omitempty"`
-	// Name of the entity model type
+	// Name of the decision model type
 	Name *string `json:"name,omitempty"`
-	// Timestamp when the entity model type was created
+	// Timestamp when the decision model type was created
 	CreatedAt *time.Time `json:"created_at,omitempty"`
-	// Timestamp when the entity model type was last updated
+	// Timestamp when the decision model type was last updated
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 }
 
-// NewEntityModelType instantiates a new EntityModelType object
+// NewDecisionModelType instantiates a new DecisionModelType object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEntityModelType() *EntityModelType {
-	this := EntityModelType{}
+func NewDecisionModelType() *DecisionModelType {
+	this := DecisionModelType{}
 	return &this
 }
 
-// NewEntityModelTypeWithDefaults instantiates a new EntityModelType object
+// NewDecisionModelTypeWithDefaults instantiates a new DecisionModelType object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewEntityModelTypeWithDefaults() *EntityModelType {
-	this := EntityModelType{}
+func NewDecisionModelTypeWithDefaults() *DecisionModelType {
+	this := DecisionModelType{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *EntityModelType) GetId() int32 {
+func (o *DecisionModelType) GetId() int32 {
 	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
@@ -58,7 +58,7 @@ func (o *EntityModelType) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EntityModelType) GetIdOk() (*int32, bool) {
+func (o *DecisionModelType) GetIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *EntityModelType) GetIdOk() (*int32, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *EntityModelType) HasId() bool {
+func (o *DecisionModelType) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -75,12 +75,12 @@ func (o *EntityModelType) HasId() bool {
 }
 
 // SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *EntityModelType) SetId(v int32) {
+func (o *DecisionModelType) SetId(v int32) {
 	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *EntityModelType) GetName() string {
+func (o *DecisionModelType) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -90,7 +90,7 @@ func (o *EntityModelType) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EntityModelType) GetNameOk() (*string, bool) {
+func (o *DecisionModelType) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *EntityModelType) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *EntityModelType) HasName() bool {
+func (o *DecisionModelType) HasName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -107,12 +107,12 @@ func (o *EntityModelType) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *EntityModelType) SetName(v string) {
+func (o *DecisionModelType) SetName(v string) {
 	o.Name = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
-func (o *EntityModelType) GetCreatedAt() time.Time {
+func (o *DecisionModelType) GetCreatedAt() time.Time {
 	if o == nil || IsNil(o.CreatedAt) {
 		var ret time.Time
 		return ret
@@ -122,7 +122,7 @@ func (o *EntityModelType) GetCreatedAt() time.Time {
 
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EntityModelType) GetCreatedAtOk() (*time.Time, bool) {
+func (o *DecisionModelType) GetCreatedAtOk() (*time.Time, bool) {
 	if o == nil || IsNil(o.CreatedAt) {
 		return nil, false
 	}
@@ -130,7 +130,7 @@ func (o *EntityModelType) GetCreatedAtOk() (*time.Time, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *EntityModelType) HasCreatedAt() bool {
+func (o *DecisionModelType) HasCreatedAt() bool {
 	if o != nil && !IsNil(o.CreatedAt) {
 		return true
 	}
@@ -139,12 +139,12 @@ func (o *EntityModelType) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given time.Time and assigns it to the CreatedAt field.
-func (o *EntityModelType) SetCreatedAt(v time.Time) {
+func (o *DecisionModelType) SetCreatedAt(v time.Time) {
 	o.CreatedAt = &v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
-func (o *EntityModelType) GetUpdatedAt() time.Time {
+func (o *DecisionModelType) GetUpdatedAt() time.Time {
 	if o == nil || IsNil(o.UpdatedAt) {
 		var ret time.Time
 		return ret
@@ -154,7 +154,7 @@ func (o *EntityModelType) GetUpdatedAt() time.Time {
 
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EntityModelType) GetUpdatedAtOk() (*time.Time, bool) {
+func (o *DecisionModelType) GetUpdatedAtOk() (*time.Time, bool) {
 	if o == nil || IsNil(o.UpdatedAt) {
 		return nil, false
 	}
@@ -162,7 +162,7 @@ func (o *EntityModelType) GetUpdatedAtOk() (*time.Time, bool) {
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *EntityModelType) HasUpdatedAt() bool {
+func (o *DecisionModelType) HasUpdatedAt() bool {
 	if o != nil && !IsNil(o.UpdatedAt) {
 		return true
 	}
@@ -171,11 +171,11 @@ func (o *EntityModelType) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given time.Time and assigns it to the UpdatedAt field.
-func (o *EntityModelType) SetUpdatedAt(v time.Time) {
+func (o *DecisionModelType) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt = &v
 }
 
-func (o EntityModelType) MarshalJSON() ([]byte, error) {
+func (o DecisionModelType) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -183,7 +183,7 @@ func (o EntityModelType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o EntityModelType) ToMap() (map[string]interface{}, error) {
+func (o DecisionModelType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -200,38 +200,38 @@ func (o EntityModelType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableEntityModelType struct {
-	value *EntityModelType
+type NullableDecisionModelType struct {
+	value *DecisionModelType
 	isSet bool
 }
 
-func (v NullableEntityModelType) Get() *EntityModelType {
+func (v NullableDecisionModelType) Get() *DecisionModelType {
 	return v.value
 }
 
-func (v *NullableEntityModelType) Set(val *EntityModelType) {
+func (v *NullableDecisionModelType) Set(val *DecisionModelType) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableEntityModelType) IsSet() bool {
+func (v NullableDecisionModelType) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableEntityModelType) Unset() {
+func (v *NullableDecisionModelType) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableEntityModelType(val *EntityModelType) *NullableEntityModelType {
-	return &NullableEntityModelType{value: val, isSet: true}
+func NewNullableDecisionModelType(val *DecisionModelType) *NullableDecisionModelType {
+	return &NullableDecisionModelType{value: val, isSet: true}
 }
 
-func (v NullableEntityModelType) MarshalJSON() ([]byte, error) {
+func (v NullableDecisionModelType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableEntityModelType) UnmarshalJSON(src []byte) error {
+func (v *NullableDecisionModelType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

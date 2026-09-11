@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **CePlusCertified** | Pointer to **bool** |  | [optional] 
 **CePlusCertificationNum** | Pointer to **string** |  | [optional] 
 **CePlusExpiryDate** | Pointer to **string** |  | [optional] 
+**CeOrIsoCertified** | Pointer to **bool** | True if either CE or ISO 27001 certification is currently valid | [optional] 
+**CePlusOrIsoCertified** | Pointer to **bool** | True if either CE+ or ISO 27001 certification is currently valid | [optional] 
 **IdvtResult** | Pointer to **int32** |  | [optional] 
 **IdvtResultPerc** | Pointer to **int32** |  | [optional] 
 **IdvtErrors** | Pointer to **string** |  | [optional] 
@@ -795,6 +797,56 @@ SetCePlusExpiryDate sets CePlusExpiryDate field to given value.
 `func (o *Organisation) HasCePlusExpiryDate() bool`
 
 HasCePlusExpiryDate returns a boolean if a field has been set.
+
+### GetCeOrIsoCertified
+
+`func (o *Organisation) GetCeOrIsoCertified() bool`
+
+GetCeOrIsoCertified returns the CeOrIsoCertified field if non-nil, zero value otherwise.
+
+### GetCeOrIsoCertifiedOk
+
+`func (o *Organisation) GetCeOrIsoCertifiedOk() (*bool, bool)`
+
+GetCeOrIsoCertifiedOk returns a tuple with the CeOrIsoCertified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCeOrIsoCertified
+
+`func (o *Organisation) SetCeOrIsoCertified(v bool)`
+
+SetCeOrIsoCertified sets CeOrIsoCertified field to given value.
+
+### HasCeOrIsoCertified
+
+`func (o *Organisation) HasCeOrIsoCertified() bool`
+
+HasCeOrIsoCertified returns a boolean if a field has been set.
+
+### GetCePlusOrIsoCertified
+
+`func (o *Organisation) GetCePlusOrIsoCertified() bool`
+
+GetCePlusOrIsoCertified returns the CePlusOrIsoCertified field if non-nil, zero value otherwise.
+
+### GetCePlusOrIsoCertifiedOk
+
+`func (o *Organisation) GetCePlusOrIsoCertifiedOk() (*bool, bool)`
+
+GetCePlusOrIsoCertifiedOk returns a tuple with the CePlusOrIsoCertified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCePlusOrIsoCertified
+
+`func (o *Organisation) SetCePlusOrIsoCertified(v bool)`
+
+SetCePlusOrIsoCertified sets CePlusOrIsoCertified field to given value.
+
+### HasCePlusOrIsoCertified
+
+`func (o *Organisation) HasCePlusOrIsoCertified() bool`
+
+HasCePlusOrIsoCertified returns a boolean if a field has been set.
 
 ### GetIdvtResult
 

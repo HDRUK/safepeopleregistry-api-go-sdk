@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Conditions** | **string** | Conditions for the decision model | 
 **RuleClass** | **string** | Class defining the rules for the decision model | 
 **Description** | Pointer to **string** | Description of the decision model | [optional] 
-**EntityModelTypeId** | Pointer to **int32** | ID of the entity model type associated with the decision | [optional] 
+**DecisionModelTypeId** | Pointer to **int32** | ID of the decision model type associated with the decision | [optional] 
 **CreatedAt** | Pointer to **time.Time** | Timestamp when the decision model was created | [optional] 
 **UpdatedAt** | Pointer to **time.Time** | Timestamp when the decision model was last updated | [optional] 
 
@@ -142,30 +142,30 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
-### GetEntityModelTypeId
+### GetDecisionModelTypeId
 
-`func (o *DecisionModel) GetEntityModelTypeId() int32`
+`func (o *DecisionModel) GetDecisionModelTypeId() int32`
 
-GetEntityModelTypeId returns the EntityModelTypeId field if non-nil, zero value otherwise.
+GetDecisionModelTypeId returns the DecisionModelTypeId field if non-nil, zero value otherwise.
 
-### GetEntityModelTypeIdOk
+### GetDecisionModelTypeIdOk
 
-`func (o *DecisionModel) GetEntityModelTypeIdOk() (*int32, bool)`
+`func (o *DecisionModel) GetDecisionModelTypeIdOk() (*int32, bool)`
 
-GetEntityModelTypeIdOk returns a tuple with the EntityModelTypeId field if it's non-nil, zero value otherwise
+GetDecisionModelTypeIdOk returns a tuple with the DecisionModelTypeId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEntityModelTypeId
+### SetDecisionModelTypeId
 
-`func (o *DecisionModel) SetEntityModelTypeId(v int32)`
+`func (o *DecisionModel) SetDecisionModelTypeId(v int32)`
 
-SetEntityModelTypeId sets EntityModelTypeId field to given value.
+SetDecisionModelTypeId sets DecisionModelTypeId field to given value.
 
-### HasEntityModelTypeId
+### HasDecisionModelTypeId
 
-`func (o *DecisionModel) HasEntityModelTypeId() bool`
+`func (o *DecisionModel) HasDecisionModelTypeId() bool`
 
-HasEntityModelTypeId returns a boolean if a field has been set.
+HasDecisionModelTypeId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
