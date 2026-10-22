@@ -121,7 +121,7 @@ func (a *VendorWebhookReceiverAPIService) VendorWebhookReceiverReceiveExecute(r 
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v VendorWebhookReceiverReceive400Response
+			var v OrganisationsAppointSro400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

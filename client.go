@@ -53,6 +53,8 @@ type APIClient struct {
 
 	FeatureAPI *FeatureAPIService
 
+	OrganisationsAPI *OrganisationsAPIService
+
 	ProjectUsersAPI *ProjectUsersAPIService
 
 	QueryAPI *QueryAPIService
@@ -78,6 +80,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.CustodianUserAPI = (*CustodianUserAPIService)(&c.common)
 	c.FeatureAPI = (*FeatureAPIService)(&c.common)
+	c.OrganisationsAPI = (*OrganisationsAPIService)(&c.common)
 	c.ProjectUsersAPI = (*ProjectUsersAPIService)(&c.common)
 	c.QueryAPI = (*QueryAPIService)(&c.common)
 	c.VendorWebhookReceiverAPI = (*VendorWebhookReceiverAPIService)(&c.common)
