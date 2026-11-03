@@ -23,6 +23,8 @@ type Organisation struct {
 	Id *int32 `json:"id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
+	// When the organisation's status last changed. Only returned by the organisations index.
+	StatusChangedAt *string `json:"status_changed_at,omitempty"`
 	OrganisationName *string `json:"organisation_name,omitempty"`
 	Address1 *string `json:"address_1,omitempty"`
 	Address2 *string `json:"address_2,omitempty"`
@@ -189,6 +191,38 @@ func (o *Organisation) HasUpdatedAt() bool {
 // SetUpdatedAt gets a reference to the given string and assigns it to the UpdatedAt field.
 func (o *Organisation) SetUpdatedAt(v string) {
 	o.UpdatedAt = &v
+}
+
+// GetStatusChangedAt returns the StatusChangedAt field value if set, zero value otherwise.
+func (o *Organisation) GetStatusChangedAt() string {
+	if o == nil || IsNil(o.StatusChangedAt) {
+		var ret string
+		return ret
+	}
+	return *o.StatusChangedAt
+}
+
+// GetStatusChangedAtOk returns a tuple with the StatusChangedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Organisation) GetStatusChangedAtOk() (*string, bool) {
+	if o == nil || IsNil(o.StatusChangedAt) {
+		return nil, false
+	}
+	return o.StatusChangedAt, true
+}
+
+// HasStatusChangedAt returns a boolean if a field has been set.
+func (o *Organisation) HasStatusChangedAt() bool {
+	if o != nil && !IsNil(o.StatusChangedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusChangedAt gets a reference to the given string and assigns it to the StatusChangedAt field.
+func (o *Organisation) SetStatusChangedAt(v string) {
+	o.StatusChangedAt = &v
 }
 
 // GetOrganisationName returns the OrganisationName field value if set, zero value otherwise.
@@ -1681,6 +1715,9 @@ func (o Organisation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt
+	}
+	if !IsNil(o.StatusChangedAt) {
+		toSerialize["status_changed_at"] = o.StatusChangedAt
 	}
 	if !IsNil(o.OrganisationName) {
 		toSerialize["organisation_name"] = o.OrganisationName

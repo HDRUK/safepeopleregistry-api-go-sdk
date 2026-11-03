@@ -32,8 +32,16 @@ type Affiliation struct {
 	Relationship *string `json:"relationship,omitempty"`
 	// Date affiliation commenced
 	From *string `json:"from,omitempty"`
-	// Date affiliation concluded
-	To *string `json:"to,omitempty"`
+	// Date affiliation ends (or ended). Null when there is no known end date
+	To NullableString `json:"to,omitempty"`
+	// When the end date was recorded
+	EndDateRecordedAt NullableTime `json:"end_date_recorded_at,omitempty"`
+	// The user who recorded the end date
+	EndDateRecordedBy NullableInt32 `json:"end_date_recorded_by,omitempty"`
+	// Who recorded the end date. The organisation's date wins over the user's
+	EndDateSource NullableString `json:"end_date_source,omitempty"`
+	// When the leaver flow ran for this affiliation
+	LeftAt NullableTime `json:"left_at,omitempty"`
 	// Department worked during affiliation
 	Department *string `json:"department,omitempty"`
 	// Role held during affiliation
@@ -297,36 +305,214 @@ func (o *Affiliation) SetFrom(v string) {
 	o.From = &v
 }
 
-// GetTo returns the To field value if set, zero value otherwise.
+// GetTo returns the To field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Affiliation) GetTo() string {
-	if o == nil || IsNil(o.To) {
+	if o == nil || IsNil(o.To.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.To
+	return *o.To.Get()
 }
 
 // GetToOk returns a tuple with the To field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Affiliation) GetToOk() (*string, bool) {
-	if o == nil || IsNil(o.To) {
+	if o == nil {
 		return nil, false
 	}
-	return o.To, true
+	return o.To.Get(), o.To.IsSet()
 }
 
 // HasTo returns a boolean if a field has been set.
 func (o *Affiliation) HasTo() bool {
-	if o != nil && !IsNil(o.To) {
+	if o != nil && o.To.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTo gets a reference to the given string and assigns it to the To field.
+// SetTo gets a reference to the given NullableString and assigns it to the To field.
 func (o *Affiliation) SetTo(v string) {
-	o.To = &v
+	o.To.Set(&v)
+}
+// SetToNil sets the value for To to be an explicit nil
+func (o *Affiliation) SetToNil() {
+	o.To.Set(nil)
+}
+
+// UnsetTo ensures that no value is present for To, not even an explicit nil
+func (o *Affiliation) UnsetTo() {
+	o.To.Unset()
+}
+
+// GetEndDateRecordedAt returns the EndDateRecordedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Affiliation) GetEndDateRecordedAt() time.Time {
+	if o == nil || IsNil(o.EndDateRecordedAt.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.EndDateRecordedAt.Get()
+}
+
+// GetEndDateRecordedAtOk returns a tuple with the EndDateRecordedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Affiliation) GetEndDateRecordedAtOk() (*time.Time, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.EndDateRecordedAt.Get(), o.EndDateRecordedAt.IsSet()
+}
+
+// HasEndDateRecordedAt returns a boolean if a field has been set.
+func (o *Affiliation) HasEndDateRecordedAt() bool {
+	if o != nil && o.EndDateRecordedAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetEndDateRecordedAt gets a reference to the given NullableTime and assigns it to the EndDateRecordedAt field.
+func (o *Affiliation) SetEndDateRecordedAt(v time.Time) {
+	o.EndDateRecordedAt.Set(&v)
+}
+// SetEndDateRecordedAtNil sets the value for EndDateRecordedAt to be an explicit nil
+func (o *Affiliation) SetEndDateRecordedAtNil() {
+	o.EndDateRecordedAt.Set(nil)
+}
+
+// UnsetEndDateRecordedAt ensures that no value is present for EndDateRecordedAt, not even an explicit nil
+func (o *Affiliation) UnsetEndDateRecordedAt() {
+	o.EndDateRecordedAt.Unset()
+}
+
+// GetEndDateRecordedBy returns the EndDateRecordedBy field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Affiliation) GetEndDateRecordedBy() int32 {
+	if o == nil || IsNil(o.EndDateRecordedBy.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.EndDateRecordedBy.Get()
+}
+
+// GetEndDateRecordedByOk returns a tuple with the EndDateRecordedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Affiliation) GetEndDateRecordedByOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.EndDateRecordedBy.Get(), o.EndDateRecordedBy.IsSet()
+}
+
+// HasEndDateRecordedBy returns a boolean if a field has been set.
+func (o *Affiliation) HasEndDateRecordedBy() bool {
+	if o != nil && o.EndDateRecordedBy.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetEndDateRecordedBy gets a reference to the given NullableInt32 and assigns it to the EndDateRecordedBy field.
+func (o *Affiliation) SetEndDateRecordedBy(v int32) {
+	o.EndDateRecordedBy.Set(&v)
+}
+// SetEndDateRecordedByNil sets the value for EndDateRecordedBy to be an explicit nil
+func (o *Affiliation) SetEndDateRecordedByNil() {
+	o.EndDateRecordedBy.Set(nil)
+}
+
+// UnsetEndDateRecordedBy ensures that no value is present for EndDateRecordedBy, not even an explicit nil
+func (o *Affiliation) UnsetEndDateRecordedBy() {
+	o.EndDateRecordedBy.Unset()
+}
+
+// GetEndDateSource returns the EndDateSource field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Affiliation) GetEndDateSource() string {
+	if o == nil || IsNil(o.EndDateSource.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.EndDateSource.Get()
+}
+
+// GetEndDateSourceOk returns a tuple with the EndDateSource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Affiliation) GetEndDateSourceOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.EndDateSource.Get(), o.EndDateSource.IsSet()
+}
+
+// HasEndDateSource returns a boolean if a field has been set.
+func (o *Affiliation) HasEndDateSource() bool {
+	if o != nil && o.EndDateSource.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetEndDateSource gets a reference to the given NullableString and assigns it to the EndDateSource field.
+func (o *Affiliation) SetEndDateSource(v string) {
+	o.EndDateSource.Set(&v)
+}
+// SetEndDateSourceNil sets the value for EndDateSource to be an explicit nil
+func (o *Affiliation) SetEndDateSourceNil() {
+	o.EndDateSource.Set(nil)
+}
+
+// UnsetEndDateSource ensures that no value is present for EndDateSource, not even an explicit nil
+func (o *Affiliation) UnsetEndDateSource() {
+	o.EndDateSource.Unset()
+}
+
+// GetLeftAt returns the LeftAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Affiliation) GetLeftAt() time.Time {
+	if o == nil || IsNil(o.LeftAt.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LeftAt.Get()
+}
+
+// GetLeftAtOk returns a tuple with the LeftAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Affiliation) GetLeftAtOk() (*time.Time, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LeftAt.Get(), o.LeftAt.IsSet()
+}
+
+// HasLeftAt returns a boolean if a field has been set.
+func (o *Affiliation) HasLeftAt() bool {
+	if o != nil && o.LeftAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLeftAt gets a reference to the given NullableTime and assigns it to the LeftAt field.
+func (o *Affiliation) SetLeftAt(v time.Time) {
+	o.LeftAt.Set(&v)
+}
+// SetLeftAtNil sets the value for LeftAt to be an explicit nil
+func (o *Affiliation) SetLeftAtNil() {
+	o.LeftAt.Set(nil)
+}
+
+// UnsetLeftAt ensures that no value is present for LeftAt, not even an explicit nil
+func (o *Affiliation) UnsetLeftAt() {
+	o.LeftAt.Unset()
 }
 
 // GetDepartment returns the Department field value if set, zero value otherwise.
@@ -680,8 +866,20 @@ func (o Affiliation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.From) {
 		toSerialize["from"] = o.From
 	}
-	if !IsNil(o.To) {
-		toSerialize["to"] = o.To
+	if o.To.IsSet() {
+		toSerialize["to"] = o.To.Get()
+	}
+	if o.EndDateRecordedAt.IsSet() {
+		toSerialize["end_date_recorded_at"] = o.EndDateRecordedAt.Get()
+	}
+	if o.EndDateRecordedBy.IsSet() {
+		toSerialize["end_date_recorded_by"] = o.EndDateRecordedBy.Get()
+	}
+	if o.EndDateSource.IsSet() {
+		toSerialize["end_date_source"] = o.EndDateSource.Get()
+	}
+	if o.LeftAt.IsSet() {
+		toSerialize["left_at"] = o.LeftAt.Get()
 	}
 	if !IsNil(o.Department) {
 		toSerialize["department"] = o.Department

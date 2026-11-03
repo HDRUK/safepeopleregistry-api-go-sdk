@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** | Model primary key | [optional] 
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
+**StatusChangedAt** | Pointer to **string** | When the organisation&#39;s status last changed. Only returned by the organisations index. | [optional] 
 **OrganisationName** | Pointer to **string** |  | [optional] 
 **Address1** | Pointer to **string** |  | [optional] 
 **Address2** | Pointer to **string** |  | [optional] 
@@ -147,6 +148,31 @@ SetUpdatedAt sets UpdatedAt field to given value.
 `func (o *Organisation) HasUpdatedAt() bool`
 
 HasUpdatedAt returns a boolean if a field has been set.
+
+### GetStatusChangedAt
+
+`func (o *Organisation) GetStatusChangedAt() string`
+
+GetStatusChangedAt returns the StatusChangedAt field if non-nil, zero value otherwise.
+
+### GetStatusChangedAtOk
+
+`func (o *Organisation) GetStatusChangedAtOk() (*string, bool)`
+
+GetStatusChangedAtOk returns a tuple with the StatusChangedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatusChangedAt
+
+`func (o *Organisation) SetStatusChangedAt(v string)`
+
+SetStatusChangedAt sets StatusChangedAt field to given value.
+
+### HasStatusChangedAt
+
+`func (o *Organisation) HasStatusChangedAt() bool`
+
+HasStatusChangedAt returns a boolean if a field has been set.
 
 ### GetOrganisationName
 

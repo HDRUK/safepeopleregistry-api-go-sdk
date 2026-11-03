@@ -11,7 +11,11 @@ Name | Type | Description | Notes
 **MemberId** | Pointer to **string** | Member ID UUID | [optional] 
 **Relationship** | Pointer to **string** | Textual representation of affiliation relationship | [optional] 
 **From** | Pointer to **string** | Date affiliation commenced | [optional] 
-**To** | Pointer to **string** | Date affiliation concluded | [optional] 
+**To** | Pointer to **NullableString** | Date affiliation ends (or ended). Null when there is no known end date | [optional] 
+**EndDateRecordedAt** | Pointer to **NullableTime** | When the end date was recorded | [optional] 
+**EndDateRecordedBy** | Pointer to **NullableInt32** | The user who recorded the end date | [optional] 
+**EndDateSource** | Pointer to **NullableString** | Who recorded the end date. The organisation&#39;s date wins over the user&#39;s | [optional] 
+**LeftAt** | Pointer to **NullableTime** | When the leaver flow ran for this affiliation | [optional] 
 **Department** | Pointer to **string** | Department worked during affiliation | [optional] 
 **Role** | Pointer to **string** | Role held during affiliation | [optional] 
 **Email** | Pointer to **string** | Professional email held during affiliation | [optional] 
@@ -242,6 +246,156 @@ SetTo sets To field to given value.
 
 HasTo returns a boolean if a field has been set.
 
+### SetToNil
+
+`func (o *Affiliation) SetToNil(b bool)`
+
+ SetToNil sets the value for To to be an explicit nil
+
+### UnsetTo
+`func (o *Affiliation) UnsetTo()`
+
+UnsetTo ensures that no value is present for To, not even an explicit nil
+### GetEndDateRecordedAt
+
+`func (o *Affiliation) GetEndDateRecordedAt() time.Time`
+
+GetEndDateRecordedAt returns the EndDateRecordedAt field if non-nil, zero value otherwise.
+
+### GetEndDateRecordedAtOk
+
+`func (o *Affiliation) GetEndDateRecordedAtOk() (*time.Time, bool)`
+
+GetEndDateRecordedAtOk returns a tuple with the EndDateRecordedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndDateRecordedAt
+
+`func (o *Affiliation) SetEndDateRecordedAt(v time.Time)`
+
+SetEndDateRecordedAt sets EndDateRecordedAt field to given value.
+
+### HasEndDateRecordedAt
+
+`func (o *Affiliation) HasEndDateRecordedAt() bool`
+
+HasEndDateRecordedAt returns a boolean if a field has been set.
+
+### SetEndDateRecordedAtNil
+
+`func (o *Affiliation) SetEndDateRecordedAtNil(b bool)`
+
+ SetEndDateRecordedAtNil sets the value for EndDateRecordedAt to be an explicit nil
+
+### UnsetEndDateRecordedAt
+`func (o *Affiliation) UnsetEndDateRecordedAt()`
+
+UnsetEndDateRecordedAt ensures that no value is present for EndDateRecordedAt, not even an explicit nil
+### GetEndDateRecordedBy
+
+`func (o *Affiliation) GetEndDateRecordedBy() int32`
+
+GetEndDateRecordedBy returns the EndDateRecordedBy field if non-nil, zero value otherwise.
+
+### GetEndDateRecordedByOk
+
+`func (o *Affiliation) GetEndDateRecordedByOk() (*int32, bool)`
+
+GetEndDateRecordedByOk returns a tuple with the EndDateRecordedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndDateRecordedBy
+
+`func (o *Affiliation) SetEndDateRecordedBy(v int32)`
+
+SetEndDateRecordedBy sets EndDateRecordedBy field to given value.
+
+### HasEndDateRecordedBy
+
+`func (o *Affiliation) HasEndDateRecordedBy() bool`
+
+HasEndDateRecordedBy returns a boolean if a field has been set.
+
+### SetEndDateRecordedByNil
+
+`func (o *Affiliation) SetEndDateRecordedByNil(b bool)`
+
+ SetEndDateRecordedByNil sets the value for EndDateRecordedBy to be an explicit nil
+
+### UnsetEndDateRecordedBy
+`func (o *Affiliation) UnsetEndDateRecordedBy()`
+
+UnsetEndDateRecordedBy ensures that no value is present for EndDateRecordedBy, not even an explicit nil
+### GetEndDateSource
+
+`func (o *Affiliation) GetEndDateSource() string`
+
+GetEndDateSource returns the EndDateSource field if non-nil, zero value otherwise.
+
+### GetEndDateSourceOk
+
+`func (o *Affiliation) GetEndDateSourceOk() (*string, bool)`
+
+GetEndDateSourceOk returns a tuple with the EndDateSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndDateSource
+
+`func (o *Affiliation) SetEndDateSource(v string)`
+
+SetEndDateSource sets EndDateSource field to given value.
+
+### HasEndDateSource
+
+`func (o *Affiliation) HasEndDateSource() bool`
+
+HasEndDateSource returns a boolean if a field has been set.
+
+### SetEndDateSourceNil
+
+`func (o *Affiliation) SetEndDateSourceNil(b bool)`
+
+ SetEndDateSourceNil sets the value for EndDateSource to be an explicit nil
+
+### UnsetEndDateSource
+`func (o *Affiliation) UnsetEndDateSource()`
+
+UnsetEndDateSource ensures that no value is present for EndDateSource, not even an explicit nil
+### GetLeftAt
+
+`func (o *Affiliation) GetLeftAt() time.Time`
+
+GetLeftAt returns the LeftAt field if non-nil, zero value otherwise.
+
+### GetLeftAtOk
+
+`func (o *Affiliation) GetLeftAtOk() (*time.Time, bool)`
+
+GetLeftAtOk returns a tuple with the LeftAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLeftAt
+
+`func (o *Affiliation) SetLeftAt(v time.Time)`
+
+SetLeftAt sets LeftAt field to given value.
+
+### HasLeftAt
+
+`func (o *Affiliation) HasLeftAt() bool`
+
+HasLeftAt returns a boolean if a field has been set.
+
+### SetLeftAtNil
+
+`func (o *Affiliation) SetLeftAtNil(b bool)`
+
+ SetLeftAtNil sets the value for LeftAt to be an explicit nil
+
+### UnsetLeftAt
+`func (o *Affiliation) UnsetLeftAt()`
+
+UnsetLeftAt ensures that no value is present for LeftAt, not even an explicit nil
 ### GetDepartment
 
 `func (o *Affiliation) GetDepartment() string`
